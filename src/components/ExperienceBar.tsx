@@ -8,11 +8,7 @@ export interface currentLevel {
   currentXp: number;
 }
 
-type xpProps = {
-  level: currentLevel;
-};
-
-export function ExperienceBar({ level }: xpProps) {
+export function ExperienceBar() {
   const { currentExperience, experienceToNextLevel } = useContext(
     ChallengesContext
   );
@@ -23,7 +19,7 @@ export function ExperienceBar({ level }: xpProps) {
 
   return (
     <header className={styles.experienceBar}>
-      <span>{level.xpStart} xp</span>
+      <span>0 xp</span>
       <div>
         <div style={{ width: `${percentToNextLevel}%` }} />
         <span
